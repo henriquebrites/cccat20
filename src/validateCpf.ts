@@ -1,15 +1,15 @@
-export function validateCpf (str: string) {
+export function validate (str: any) {
 	if (str !== null) {
 		if (str !== undefined) {
 			if (str.length >= 11 && str.length <= 14) {
-				// clean cpf
+				// cleanning cpf
 				str = str
 							.replace('.', '')
 							.replace('.', '')
 							.replace('-', '')
 							.replace(" ", "");
 				// tudo igual
-				if (!str.split("").every(c => c === str[0])) {
+				if (!str.split("").every((c: any) => c === str[0])) {
 					try {
 						let		d1, d2;
 						let		dg1, dg2, rest;
@@ -34,7 +34,7 @@ export function validateCpf (str: string) {
 
 						// se for menor que 2 é 0, senão 11 menos o resto
 						dg1 = (rest < 2) ? 0 : 11 - rest;
-						dg2 += 2 * dg1;
+						d2 += 2 * dg1;
 						rest = (d2 % 11);
 						if (rest < 2)
 							dg2 = 0;
@@ -42,7 +42,7 @@ export function validateCpf (str: string) {
 							dg2 = 11 - rest;
 
 							let nDigVerific = str.substring(str.length-2, str.length);
-						nDigResult = "" + dg1 + dg2;
+						nDigResult = "" + dg1 + "" + dg2;
 
 						return nDigVerific === nDigResult;
 
