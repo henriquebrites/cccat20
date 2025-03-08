@@ -1,3 +1,20 @@
+/*
+	Code Smells:
+
+	* nomes ruins em variáveis, funções, mistura de pt-br e en
+	* muito if, muito aninhamento, muita complexidade
+	* comentários
+	* código morto (abandonado)
+	* linha em branco (vazia)
+	* números mágico
+	* metodo longo
+	* variáveis declaradas longe da utilização
+	* declaração múltipla de variáveis
+	* tratar exceptions adequadamente
+
+
+*/
+
 export function validate (str: any) {
 	if (str !== null) {
 		if (str !== undefined) {
